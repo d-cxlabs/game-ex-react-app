@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Trophy, Calendar, Users, Zap, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-export function HomePage() {
+export default function HomePage() {
   const features = [
     {
       icon: Trophy,

@@ -1,8 +1,9 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { StoryCard } from '../components/StoryCard';
 import { Trophy, Calendar, Users, Gamepad2 } from 'lucide-react';
 
 const stories = [
+
   {
     id: 1,
     title: 'GameEx Championship 2026: The Ultimate Showdown',
@@ -67,7 +68,8 @@ const categories = [
   { name: 'Esports', icon: Gamepad2 },
 ];
 
-export function StoriesPage() {
+export default function StoriesPage() {
+
   return (
     <>
       <section className="relative overflow-hidden">

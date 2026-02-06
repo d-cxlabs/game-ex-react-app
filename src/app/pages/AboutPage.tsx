@@ -1,8 +1,8 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Trophy, Target, Users, Award, Zap, Heart } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-export function AboutPage() {
+export default function AboutPage() {
   const values = [
     {
       icon: Trophy,

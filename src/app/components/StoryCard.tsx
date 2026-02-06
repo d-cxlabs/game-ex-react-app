@@ -1,5 +1,5 @@
 import { Clock, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface StoryCardProps {

@@ -1,8 +1,8 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
 
-export function ContactPage() {
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

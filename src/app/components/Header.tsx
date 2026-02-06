@@ -4,7 +4,7 @@ import { Trophy } from 'lucide-react';
 
 export function Header() {
   const location = useLocation();
-  
+
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Events', path: '/events' },
@@ -14,56 +14,60 @@ export function Header() {
   ];
 
   return (
-    <header 
+    <header
       className="sticky top-0 z-50 border-b backdrop-blur-lg shadow-sm"
-      style={{ 
+      style={{
         borderColor: '#E5E7EB',
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
       }}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+          
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div 
+            <div
               className="w-10 h-10 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: '#0B5ED7' }}
             >
-              <Trophy size={20} style={{ color: '#FFFFFF' }} />
+              <Trophy size={20} className="text-white" />
             </div>
-            <span 
-              className="text-2xl font-bold"
-              style={{ color: '#1F2937' }}
-            >
-              GAME<span style={{ color: '#0B5ED7' }}>EX</span>
-            </span>
+            <span className="text-lg font-semibold">GameEx</span>
           </Link>
-          
+
+          {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="text-sm font-medium hover:text-[#0B5ED7] transition-colors"
-                style={{ color: location.pathname === item.path ? '#0B5ED7' : '#6B7280' }}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const active = location.pathname === item.path;
+
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors ${
+                    active ? 'text-blue-600' : 'text-gray-600 hover:text-black'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
-          
+
+          {/* CTA */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 rounded-full font-medium shadow-md"
-            style={{
-              backgroundColor: '#0B5ED7',
-              color: '#FFFFFF',
-            }}
+            className="px-4 py-2 rounded-lg text-white text-sm font-medium"
+            style={{ backgroundColor: '#0B5ED7' }}
           >
-            Register Event
+            Join Now
           </motion.button>
+
         </div>
       </div>
     </header>
   );
 }
+
+

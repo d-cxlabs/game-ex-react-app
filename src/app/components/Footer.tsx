@@ -1,7 +1,8 @@
 import { Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export function Footer() {
+export default function Footer() 
+ {
   return (
     <footer 
       className="py-12 border-t"
